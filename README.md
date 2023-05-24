@@ -1,4 +1,4 @@
-# CASA0003-Group2
+# CASA0003 Digital Visualisation
 This is the Group Assessment of Group 02 in 2023.<br><br>
 Members' name:<br>
 Qiqi Liu<br>
