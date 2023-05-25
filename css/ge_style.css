@@ -86,6 +86,9 @@ ul.navbar li a:hover {
     margin-top:35px;
     margin-bottom:35px;
 }
+a{
+  text-decoration: none;
+}
 
 .mid-text{
     margin: 20px 0;
