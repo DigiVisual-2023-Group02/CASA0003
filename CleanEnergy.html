@@ -8,9 +8,16 @@
   
     <!--style-->
     <link rel="stylesheet" href="./css/ge_style.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
     
     <!--Load echarts.js-->
     <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+    
+    <!-- mapbox.js -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+
+    <!-- d3.js -->
+    <script charset="utf-8" src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 
     <body>
@@ -48,10 +55,11 @@
             </p>
 
             <p class="mid-text">
-                All graphs are based on data from 
-                <a href="https://www.nyserda.ny.gov/About/Publications/New-York-Clean-Energy-Industry-Report">New York Clean Energy Industry Report</a> and 
-                <a href="https://www.nyc.gov/html/dot/html/motorist/electric-vehicles.shtml#/find/nearest">NYC Gov Open Data</a>.
-            </p>
+                All graphs and the map are based on data from: </p>
+            <p style="margin: 20px 0; font-family: Geneva,sans-serif;font-size: 20px; font-weight: lighter; display: flex;"> Graphs:&nbsp;
+                <a href="https://www.nyserda.ny.gov/About/Publications/New-York-Clean-Energy-Industry-Report">New York Clean Energy Industry Report;</a></p>   
+            <p style="margin: 20px 0; font-family: Geneva,sans-serif;font-size: 20px; font-weight: lighter; display: flex;"> Map:&nbsp;
+                <a href="https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/#request-url">NREL Documentation: Alternative Fuel Stations</a></p>
         </div>
 
         
@@ -64,7 +72,7 @@
             </div>
 
             <div class="mid-text">
-                <div class="left" style="width">
+                <div class="left">
                     <b>165,000</b> - In the last quarter of 2021, clean energy businesses across New York employed more than 165,000 workers. 
                     <br><br>
                     <b>5% or 7,369</b> - This represents an increase of about 5%, or 7,369 jobs, compared to the end of 2020.
@@ -137,8 +145,58 @@
                 By promoting the use of electric vehicles, the city aims to reduce carbon emissions, improve air quality and pave the way for a sustainable transport system. The image below shows a map of electric vehicle station locators in New York City, with the different energy sources marked in different colours. 
                 <br><br>
             </p>
-            
-            <div id="afdc-stations"><div id="afdc-stations-loading">Loading alternative fueling station locator...</div></div><script type="text/javascript">window.afdcStationsOptions = {"country":"US","localeCountry":"US","path":"/find/nearest","query":{"location":"NYC"}}</script><script async defer src="https://widgets.nrel.gov/afdc/station-locator/assets/embed.js"></script><noscript>Please enable JavaScript to view the alternative fueling station locator.</noscript>
+        </div>
+        <div class="middleThings">
+            <div id="ge_map">
+                <div class="map-container">
+                    <div class="inner">
+                        <h2>EV Charging Stations Locator New York City</h2>
+                        <p class="credit">Data: <a href="https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/">
+                            Alternative Fuel Stations API - NREL</a>
+                        </p>  
+                    </div>
+                    <div class="inner">
+                        <table>
+                            <tr>
+                            <th>Legend</th>
+                            </tr>
+                            <tr>
+                            <td><div class="color-box" style="background-color: rgb(81, 219, 180);"></div></td>
+                            <td><b>ELEC</b> Electric</td>
+                            </tr>
+                            <tr>
+                            <td><div class="color-box" style="background-color: rgb(245, 190, 102);"></div></td>
+                            <td><b>E85</b> Ethanol</td>
+                            </tr>
+                            <tr>
+                            <td><div class="color-box" style="background-color: rgb(61, 138, 214);"></div></td>
+                            <td><b>CNG</b> Compressed Natural Gas</td>
+                            </tr>
+                            <tr>
+                            <td><div class="color-box" style="background-color: rgb(228, 162, 142);"></div></td>
+                            <td><b>RD</b> Renewable Diesel (R20 and above)</td>
+                            </tr>
+                            <tr>
+                            <td><div class="color-box" style="background-color: rgb(173, 212, 222);"></div></td>
+                            <td><b>HY</b> Hydrogen</td>
+                            </tr>
+                            <tr>
+                            <td><div class="color-box" style="background-color: rgb(24, 125, 13);"></div></td>
+                            <td><b>LNG</b> Liquefied Natural Gas</td>
+                            </tr>
+                            <tr>                                
+                            <td><div class="color-box" style="background-color: rgb(223, 88, 115);"></div></td>
+                            <td><b>BD</b> Biodiesel (B20 and above)</td>
+                            </tr>
+                            <tr>
+                            <td><div class="color-box" style="background-color: rgb(152, 141, 199);"></div></td>
+                            <td><b>LPG</b> Propane</td>
+                             </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
         </div>
         
         <!--Line+footer-->
@@ -155,6 +213,7 @@
         <script src='./js/ge_chart1.js' type="text/javascript"></script>
         <script src='./js/ge_chart2.js' type="text/javascript"></script>
         <script src='./js/ge_chart3.js' type="text/javascript"></script>
+        <script src='./js/ge_map.js'></script>
     </body>
 
 </html>
