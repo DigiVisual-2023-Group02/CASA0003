@@ -35,10 +35,9 @@ ul.navbar li a:hover {
     background-color: rgb(123, 93, 62);
 }
 
-
 body {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /* Text style */
@@ -54,7 +53,7 @@ p{
     text-align: center;
     font-weight: 700;
     font-size: 60px;
-    font-family:"Montserrat",sans-serif;
+    font-family:"Geneva",sans-serif;
     margin-top: 80px;
 }
 .mid-text {
@@ -132,6 +131,12 @@ p{
     grid-area: popchart;
     height: 800px;
     width: 1000px;
+}
+.chart-title{
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Montserrat',sans-serif;
 }
 
 hr {

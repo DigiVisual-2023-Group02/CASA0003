@@ -25,8 +25,8 @@ body {
 
 #map_describe {
     position: absolute;
-    width: 320px;
-    height: 200px;
+    width: 400px;
+    height: 500px;
     background-color: white;
     margin-left: 20px;
     margin-top: 20px;
@@ -40,6 +40,7 @@ body {
 }
 
 .row {
+    margin: 0 auto;
     height: 12px;
     width: 100%;
 }
@@ -49,15 +50,18 @@ body {
     margin-bottom: 5px;
 }
 
+
 .table{
     margin: 0 auto;
 
 }
 
+
 .label {
     height: 20px;
     width: 20px;
 }
+
 
 .legend {
     position: fixed;
@@ -72,4 +76,12 @@ body {
 
 .legend-text{
     text-align: center;
+}
+
+#bar-chart{
+    margin: auto;
+    padding-top: 50px;
+    grid-area: popchart;
+    height: 250px;
+    width: 400px;
 }
