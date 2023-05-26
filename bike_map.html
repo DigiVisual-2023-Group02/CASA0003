@@ -46,6 +46,7 @@
     </div>
     <p style="text-align: justify; margin: 0 7px 0 7px">Data: <a href='https://citibikenyc.com/system-data'>
         The CITI bike sharing From 2014 - 2020 </a></p>
+    <div id="bar-chart"></div>
 </div>
 
 
@@ -167,6 +168,87 @@
         });
 
 
+
+        var chartDom = document.getElementById('bar-chart');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    // Use axis to trigger tooltip
+                    type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+                }
+            },
+            legend: {},
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value'
+            },
+            yAxis: {
+                type: 'category',
+                data: ['2014', '2015', '2016', '2017', '2018', '2019', '2020']
+            },
+            series: [
+                {
+                    name: 'Manhattan',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [2900, 3241, 3373, 3510, 3689, 3913, 4068]
+                },
+                {
+                    name: 'Brooklyn',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [425, 653, 970, 1341, 1465, 1793, 1880]
+                },
+                {
+                    name: 'Queens',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [0, 98, 120, 234, 290, 330, 378]
+                },
+                {
+                    name: 'Bronx',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [0, 0, 0, 0, 0, 0, 493]
+                },
+
+            ]
+        };
+
+        option && myChart.setOption(option);
     </script>
 </body>
 </html>
